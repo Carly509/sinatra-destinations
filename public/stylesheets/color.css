@@ -155,6 +155,13 @@
   background-color: #4CAF50; /* Add an active/current color */
 }
 
+.logo {
+  display:block;
+  width:auto;
+  margin-left:auto;
+  margin-right:auto;
+}
+
 
 
 
