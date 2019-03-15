@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
     
     get '/users/show' do 
        @message = 'The page you are looking for does not exist; it may have been moved, or removed'
@@ -17,7 +17,7 @@ class UserController < ApplicationController
 
       else
         @message = "No user found!"
-        erb :'/users/login'
+        erb :index
       end
     end
 
