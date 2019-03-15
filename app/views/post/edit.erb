@@ -1,0 +1,9 @@
+<div class="pros">
+<h2>EDIT YOUR POST</h2>
+<form method="post" action="/update/<%=@post.id%>">
+<input id="hidden" type="hidden" value="patch" name="_method" >
+  <p>Post Title <input type="text" name = "title"  value="<%=@post.title%>" required ></p>
+  <p>Post content: <input type="text" name="content"  value="<%=@post.content%>" required></p>
+  <input type="submit">
+</form>
+</div>
