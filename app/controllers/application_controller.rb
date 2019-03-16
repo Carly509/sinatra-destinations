@@ -28,10 +28,4 @@ class ApplicationController < Sinatra::Base
    end
   end
 
-
-get  '/users/logout' do
-  erb :'/users/welcome'
-end
-
-
 end

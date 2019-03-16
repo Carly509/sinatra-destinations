@@ -1,5 +1,20 @@
+<nav class="navbar navbar-inverse" style="background-color: #5B5A5A;">
+  <span><strong><a class="navbar-brand">Destinations</a></strong></span>
+<div class="text-right">
+<form method="GET" class="form-inline" action="/logout">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+  </form>
+  
+  <div class="icon-bar">
+  <a href="#"><i class="fa fa-search"></i></a> 
+  <a href="#"><i class="fa fa-envelope"></i></a> 
+  <a href="#"><i class="fa fa-trash"></i></a> 
+</div>
+  </nav>
+
 <div class="pros">
-<h2>EDIT YOUR POST</h2>
+<h2>EDITING</h2>
 <form method="post" action="/update/<%=@post.id%>">
 <input id="hidden" type="hidden" value="patch" name="_method" >
   <p>Post Title <input type="text" name = "title"  value="<%=@post.title%>" required ></p>

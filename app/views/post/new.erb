@@ -1,3 +1,20 @@
+ <!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <nav class="navbar navbar-inverse" style="background-color: #5B5A5A;">
+  <span><strong><a class="navbar-brand">Destinations</a></strong></span>
+<div class="text-right">
+<form method="GET" class="form-inline" action="/logout">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+  </form>
+  
+  <div class="icon-bar">
+  <a href="#"><i class="fa fa-search"></i></a> 
+  <a href="#"><i class="fa fa-envelope"></i></a> 
+</div>
+  </nav>
+
 <form method= "POST" action= "/post/create">
 <p> Post title: <input type="text" name ="post[title]" required> </p>
 
