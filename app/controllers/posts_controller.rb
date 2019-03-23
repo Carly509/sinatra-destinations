@@ -84,7 +84,6 @@ class PostsController < ApplicationController
         if logged_in?
             title = params[:title]
             content = params[:content]
-            #@post = Post.create(title:title, content:content)
             @post = current_user.post.build(params[:post])
             @post.save
             erb :'post/show'
