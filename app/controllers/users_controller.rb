@@ -39,6 +39,8 @@ class UsersController < ApplicationController
       # raise params.inspect
       name = params[:name]
       email = params[:email]
+      username = params [:username]
+      city = params [:city]
       pasword = params[:password]
       @user = User.create(name:name,email:email,password:pasword )
       session[:user_id] = @user.id
@@ -60,7 +62,7 @@ class UsersController < ApplicationController
     get "/users/:id" do
       if logged_in?
           @user = User.find(session[:user_id])
-        # @user = User.find(params[:id])
+        
           erb :'/users/show'
       else 
         @message = 'Access denied! you do not have permision to see this!'
