@@ -7,7 +7,6 @@ class UsersController < ApplicationController
 
     post '/users/login' do
       @user = User.find_by(email: params["email"],password: params["password"])
-
       if @user
       session[:user_id] = @user.id
       @post = current_user.post.all
@@ -38,8 +37,9 @@ class UsersController < ApplicationController
       if !logged_in?
       name = params[:name]
       email = params[:email]
+      username = params[:username]
       pasword = params[:password]
-      @user = User.create(name:name,email:email,password:pasword )
+      @user = User.create(name:name,email:email,username:username,city:city,password:password )
       session[:user_id] = @user.id
 
       @post = current_user.post.all
