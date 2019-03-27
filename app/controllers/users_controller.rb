@@ -38,8 +38,9 @@ class UsersController < ApplicationController
       name = params[:name]
       email = params[:email]
       username = params[:username]
-      pasword = params[:password]
-      @user = User.create(name:name,email:email,username:username,city:city,password:password )
+      city = params[:city]
+      password = params[:password]
+      @user = User.create(name:name,email:email,username:username,city:city,password:password)
       session[:user_id] = @user.id
 
       @post = current_user.post.all
