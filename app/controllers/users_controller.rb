@@ -34,15 +34,11 @@ class UsersController < ApplicationController
     end
 
     post "/users/signup" do
-      if !logged_in?
-      name = params[:name]
-      email = params[:email]
-      username = params[:username]
-      city = params[:city]
-      password = params[:password]
-      @user = User.create(name:name,email:email,username:username,city:city,password:password)
+      
+      @user = User.new(:name => params[:name], :username =>  params[:username], :email => params[:email], :password => params[:password], :city => params[:city])
+      @user.save
       session[:user_id] = @user.id
-
+      if user.save
       @post = current_user.post.all
       @total_post = current_user.post.count
       erb :"/post/index"
@@ -72,7 +68,7 @@ class UsersController < ApplicationController
       session.clear
       erb :index
       else 
-
+     erb :error
       end
     end
 
