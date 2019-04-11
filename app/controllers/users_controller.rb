@@ -29,7 +29,7 @@ class UsersController < ApplicationController
         
 
        else  
-        erb :'/users/login'
+        erb :'/index'
        end
     end
 
@@ -38,15 +38,10 @@ class UsersController < ApplicationController
       @user = User.new(:name => params[:name], :username =>  params[:username], :email => params[:email], :password => params[:password], :city => params[:city])
       @user.save
       session[:user_id] = @user.id
-      if user.save
+      if @user.save
       @post = current_user.post.all
       @total_post = current_user.post.count
       erb :"/post/index"
-
-      else
-        @user = User.find(session[:user_id])
-        @total_post = current_user.post.count
-        erb :"/post/index"
       end
       
     end
@@ -67,8 +62,7 @@ class UsersController < ApplicationController
       if logged_in?
       session.clear
       erb :index
-      else 
-     erb :error
+      
       end
     end
 

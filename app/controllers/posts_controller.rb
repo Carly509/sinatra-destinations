@@ -13,6 +13,8 @@ class PostsController < ApplicationController
         
     end
 
+    
+
     patch '/update/:id' do
         if logged_in?
             @post = Post.find(params[:id])
@@ -61,7 +63,8 @@ class PostsController < ApplicationController
             @message ='You must login first'
             redirect"/users/login"
      end 
-    end
+
+end
 
     
     get '/post/:id/edit' do
